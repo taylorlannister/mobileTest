@@ -89,6 +89,7 @@ class BookingDataManager: ObservableObject {
     
     func refreshData() {
         self.bookings?.removeAll()
+        UserDefaults.standard.removeObject(forKey: Constant.cacheKey)
         dataProvider()
     }
 }
